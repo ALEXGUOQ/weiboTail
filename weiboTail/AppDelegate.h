@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+//有米广告
+#import "YouMiConfig.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) UIImageView *mySplashView;
 @end

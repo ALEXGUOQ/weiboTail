@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1878791119BC05AF0001EA16"
-               BuildableName = "weiboTail.app"
+               BuildableName = "&#x5fae;&#x535a;&#x5c0f;&#x5c3e;&#x5df4;.app"
                BlueprintName = "weiboTail"
                ReferencedContainer = "container:weiboTail.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1878791119BC05AF0001EA16"
-            BuildableName = "weiboTail.app"
+            BuildableName = "&#x5fae;&#x535a;&#x5c0f;&#x5c3e;&#x5df4;.app"
             BlueprintName = "weiboTail"
             ReferencedContainer = "container:weiboTail.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1878791119BC05AF0001EA16"
-            BuildableName = "weiboTail.app"
+            BuildableName = "&#x5fae;&#x535a;&#x5c0f;&#x5c3e;&#x5df4;.app"
             BlueprintName = "weiboTail"
             ReferencedContainer = "container:weiboTail.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1878791119BC05AF0001EA16"
-            BuildableName = "weiboTail.app"
+            BuildableName = "&#x5fae;&#x535a;&#x5c0f;&#x5c3e;&#x5df4;.app"
             BlueprintName = "weiboTail"
             ReferencedContainer = "container:weiboTail.xcodeproj">
          </BuildableReference>

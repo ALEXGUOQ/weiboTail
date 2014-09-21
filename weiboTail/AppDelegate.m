@@ -9,13 +9,97 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize mySplashView;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    
+    //有米广告
+    [YouMiConfig setUseInAppStore:YES];  // [可选]开启内置appStore，详细请看YouMiSDK常见问题解答
+    [YouMiConfig launchWithAppID:@"d38a28c984bba226" appSecret:@"630665c87c80a0cd"];
+    
+    //启动动画
+    [self.window makeKeyAndVisible];
+    
+    mySplashView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+    [mySplashView setImage:[UIImage imageNamed:@"background_"]];
+    [self.window addSubview:mySplashView];
+    [self.window bringSubviewToFront:mySplashView];
+    
+    [self performSelector:@selector(showWord) withObject:nil afterDelay:0.3f];
+
+    
     return YES;
 }
-							
+
+
+-(void)showWord
+{
+    CGFloat animateHeight = 450;
+    
+    UIImageView *lightpoint = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icare_iphone_lightpoint"]];
+    
+    UIImageView *lightline = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icare_iphone_lightline"]];
+    
+    
+    [lightline setCenter:CGPointMake(160, animateHeight)];
+    [lightline setFrame:CGRectMake(lightline.frame.origin.x, lightline.frame.origin.y, 0, 2)];
+    
+    [lightpoint setCenter:CGPointMake(180, animateHeight)];
+    lightpoint.hidden= YES;
+    [mySplashView addSubview:lightpoint];
+    
+    [mySplashView addSubview:lightline];
+    [UIView animateWithDuration:0.2
+                          delay:0.0
+                        options:UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         //                         [lightpoint setCenter:CGPointMake(233, 310)];
+                         [lightline setFrame:CGRectMake(lightline.frame.origin.x, lightline.frame.origin.y, 188, 2)];
+                     }
+                     completion:^(BOOL finished) {
+                         lightpoint.hidden= NO;
+                         [UIView animateWithDuration:0.4
+                                               delay:0.0
+                                             options:UIViewAnimationOptionAllowAnimatedContent
+                                          animations:^{
+                                              
+                                              [lightpoint setCenter:CGPointMake(233, animateHeight)];
+                                          }
+                                          completion:^(BOOL finished) {
+                                              
+                                              NSLog(@"completion");
+                                          }
+                          
+                          ];
+                     }
+     
+     ];
+    
+    
+    UIImageView *word_ = [[UIImageView alloc]initWithFrame:CGRectMake(35, 380, 250, 60)];
+    word_.image = [UIImage imageNamed:@"word_"];
+    [mySplashView addSubview:word_];
+    
+    word_.alpha = 0.0;
+    [UIView animateWithDuration:1.0f delay:0.0f options:UIViewAnimationOptionCurveLinear
+                     animations:^
+     {
+         word_.alpha = 1.0;
+     }
+                     completion:^(BOOL finished)
+     {
+         // 完成后执行code
+         [NSThread sleepForTimeInterval:1.0f];
+         [mySplashView removeFromSuperview];
+         
+     }
+     ];
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
