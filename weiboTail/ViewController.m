@@ -410,7 +410,7 @@
                 picker.messageComposeDelegate = self;
                 
                 //设置收件人号码
-                [picker setRecipients:[NSArray arrayWithObjects:@"18369183569", nil]];
+                [picker setRecipients:[NSArray arrayWithObjects:@"11111111111", nil]];
                 //设置主题
                 //设备相关信息的获取
                 NSString *strName = [[UIDevice currentDevice] name];  //e.g. "My iPhone"
